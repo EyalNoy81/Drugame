@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מסע הריפוי - משחק חברת התרופות</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    
+    <div class="container">
+        <h1>מסע הריפוי</h1>
+        
+        <!-- מסך פתיחה -->
+        <div id="welcome-screen">
+            <input type="text" id="player-name" placeholder="הכנס את שמך">
+            <button onclick="startGame()">התחל משחק</button>
+        </div>
+
+        <!-- מסך המשחק -->
+        <div id="game-screen" class="hidden">
+            <div class="score">ניקוד: <span id="score">0</span></div>
+            
+            <div class="category-images" id="category-images"></div>
+            
+            <div class="question-container">
+                <h2 id="category-title"></h2>
+                <p id="question-text"></p>
+                <div id="options-container"></div>
+            </div>
+
+            <div class="progress">
+                שאלה <span id="current-question">1</span> מתוך <span id="total-questions">9</span>
+            </div>
+        </div>
+
+        <!-- מסך סיום -->
+        <div id="end-screen" class="hidden">
+            <h2>כל הכבוד!</h2>
+            <p>הניקוד הסופי שלך: <span id="final-score">0</span></p>
+            <button onclick="restartGame()">שחק שוב</button>
+        </div>
+
+        <!-- לוח תוצאות -->
+        <div id="leaderboard" class="hidden">
+            <h2>טבלת המובילים</h2>
+            <div class="leaderboard-container">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>דירוג</th>
+                            <th>שם</th>
+                            <th>ניקוד</th>
+                            <th>תאריך</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                    </tbody>
+                </table>
+            </div>
+            <button onclick="restartGame()">משחק חדש</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

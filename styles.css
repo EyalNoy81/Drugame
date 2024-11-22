@@ -1,0 +1,227 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/M_bg.png');
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.container {
+    margin-left: 55%; /* הגדלה מ-28% ל-38% */
+    width: 45%; /* הקטנה מ-70% ל-60% */
+    max-width: 800px; /* הגבלת רוחב מקסימלי */
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.category-images {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50%; /* הגדלה מ-25% ל-35% */
+    height: 100vh;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.category-images img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.category-images img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.hidden {
+    display: none;
+}
+
+.question-container {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    font-size: 0.95em; /* הקטנת גודל הטקסט */
+}
+
+
+.option-button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-button:hover {
+    background-color: #2980b9;
+}
+
+.option-button.correct {
+    background-color: #28a745;
+}
+
+.option-button.wrong {
+    background-color: #dc3545;
+}
+
+.option-button.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.score {
+    font-size: 1.2em;
+    text-align: left;
+    color: #2c3e50;
+}
+
+.progress {
+    text-align: center;
+    margin-top: 20px;
+    color: #7f8c8d;
+}
+
+.feedback-message {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feedback-correct {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback-wrong {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.feedback-explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e2e3e5;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.leaderboard-container {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#leaderboard-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+#leaderboard-table tr:nth-child(-n+5) {
+    background-color: #e8f6ff;
+}
+
+#leaderboard-table tr:first-child {
+    background-color: #ffd700;
+}
+
+@media (max-width: 1200px) {
+    .category-images {
+        width: 30%; /* הקטנה במסכים בינוניים */
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .container {
+        margin-left: 33%;
+        width: 65%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .category-images {
+        position: static;
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* הוספת סגנון לכפתור "לשאלה הבאה" */
+.next-question-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.next-question-btn:hover {
+    background-color: #2980b9;
+}
+
+/* עדכון סגנון להודעת המשוב */
+.feedback-message {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    opacity: 1;
+}
